@@ -92,6 +92,9 @@ to
 
 ------------
 
+## Plugin Tutorial: ##
+
+To use the Klangfalter plugin, click on "no file loaded" to load a IR file.
 
 ## Very Short Tutorial: ##
 
