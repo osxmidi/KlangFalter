@@ -36,6 +36,12 @@ sudo apt-get -y install webkit2gtk-4.0 git pkg-config libfreetype6-dev libx11-de
 
 Install JUCE into ~/JUCE
 
+Enable GPL mode
+
+Edit ~/JUCE/extras/Projucer/JuceLibraryCode/AppConfig.h
+
+and change #define JUCER_ENABLE_GPL_MODE to #define JUCER_ENABLE_GPL_MODE 1
+
 Place the unzipped KlangFalter-master folder into the ~/JUCE folder
 
 Place the vst2.4 sdk's pluginterfaces folder into ~/JUCE/modules/juce_audio_plugin_client/VST/
