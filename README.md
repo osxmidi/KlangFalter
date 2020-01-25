@@ -38,7 +38,7 @@ Install JUCE into ~/JUCE
 
 Place the unzipped KlangFalter folder into the ~/JUCE folder
 
-Place the vst24 sdk's plugininterfaces folder into ~/SDKs/VST3 SDK or modules/juce_audio_processors/format_types/VST3_SDK
+Place the vst2.4 sdk's pluginterfaces folder into ~/JUCE/modules/juce_audio_plugin_client/VST/
 
 cd into ~/JUCE/Unzipped KlangFalter folder/Builds/Linux
 
