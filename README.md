@@ -26,6 +26,72 @@ For installation, just download the according .zip file and extract it in your p
 At the moment, I only build Audio Unit plugins for Mac. However, an LV2 version for Linux can be found
 in the really great [distrho](http://distrho.sourceforge.net) distrho project.
 
+## Linux Make
+
+Linux make instructions
+
+Some libraries need to be installed
+
+sudo apt-get -y install webkit2gtk-4.0 git pkg-config libfreetype6-dev libx11-dev libxinerama-dev libxrandr-dev libxcursor-dev mesa-common-dev libasound2-dev freeglut3-dev libxcomposite-dev libcurl4-gnutls-dev
+
+Install JUCE into ~/JUCE
+
+Place the unzipped KlangFalter folder into the ~/JUCE folder
+
+Place the vst24 sdk's plugininterfaces folder into ~/SDKs/VST3 SDK or modules/juce_audio_processors/format_types/VST3_SDK
+
+cd into ~/JUCE/Unzipped KlangFalter folder/Builds/Linux
+
+make CONFIG=Release
+
+------------
+
+To make without webkit dependencies
+
+use Makefile-nowebkit (rename Makefile-nowebkit to Makefile and then make CONFIG=Release)
+
+Some edits need to be made in 2 files
+
+--------
+
+juce_gui_extra.h in
+
+/JUCE/modules/juce_gui_extra/
+
+change
+
+#ifndef JUCE_WEB_BROWSER
+
+#define JUCE_WEB_BROWSER 1
+
+#endif
+
+to
+
+#ifndef JUCE_WEB_BROWSER
+
+// #define JUCE_WEB_BROWSER 1
+
+#endif
+
+--------
+
+juce_ApplicationBase.cpp in
+
+/JUCE/modules/juce_events/messages/
+
+change
+
+#if JUCE_LINUX && JUCE_MODULE_AVAILABLE_juce_gui_extra && (! defined(JUCE_WEB_BROWSER) || JUCE_WEB_BROWSER)
+
+to
+
+#if JUCE_LINUX && JUCE_MODULE_AVAILABLE_juce_gui_extra && JUCE_WEB_BROWSER
+
+(there are 2 occurrences of it that need to be changed in the juce_ApplicationBase.cpp file)
+
+------------
+
 
 ## Very Short Tutorial: ##
 
