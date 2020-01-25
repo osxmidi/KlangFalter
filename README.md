@@ -44,6 +44,8 @@ cd into ~/JUCE/Unzipped KlangFalter-master folder/Builds/Linux
 
 make CONFIG=Release
 
+Binaries are produced in the ~/JUCE/Unzipped KlangFalter-master folder/Builds/Linux/build folder
+
 ------------
 
 To make without webkit dependencies
