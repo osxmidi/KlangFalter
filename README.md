@@ -40,7 +40,7 @@ Place the unzipped KlangFalter master folder into the ~/JUCE folder
 
 Place the vst2.4 sdk's pluginterfaces folder into ~/JUCE/modules/juce_audio_plugin_client/VST/
 
-cd into ~/JUCE/Unzipped KlangFalter folder/Builds/Linux
+cd into ~/JUCE/Unzipped KlangFalter master folder/Builds/Linux
 
 make CONFIG=Release
 
