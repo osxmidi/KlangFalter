@@ -1,5 +1,8 @@
 KlangFalter
 ===========
+
+To Make.
+
 There are basically 2 config options.
 
 1: Copy the contents of the JUCE6 modules folder to the plugin/JuceLibraryCode/modules folder (for making the default Vst3 version)
@@ -33,6 +36,8 @@ To make the default Vst3 version, cd into the ~/JUCE6/unzipped KlangFalter maste
 make CONFIG=Release
 
 vst3 is installed into ~/.vst3
+
+For Bitwig, the Vst3 needs Bitwig 3.2 or later.
 
 ------------
 
