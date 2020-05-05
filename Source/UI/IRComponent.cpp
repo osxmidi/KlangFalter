@@ -126,6 +126,7 @@ void IRComponent::resized()
     //[/UserResized]
 }
 
+/*
 void IRComponent::buttonClicked (Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
@@ -143,6 +144,73 @@ void IRComponent::buttonClicked (Button* buttonThatWasClicked)
         if (fileChooser.browseForFileToOpen() && fileChooser.getResults().size() == 1)
         {
           const File file = fileChooser.getResults().getReference(0);
+          _irAgent->setFile(file, 0);
+          repaint();
+        }
+        //[/UserButtonCode__loadButton]
+    }
+    else if (buttonThatWasClicked == _clearButton)
+    {
+        //[UserButtonCode__clearButton] -- add your button handler code here..
+        if (_irAgent)
+        {
+          _irAgent->clear();
+          repaint();
+        }
+        //[/UserButtonCode__clearButton]
+    }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
+}
+*/
+
+void IRComponent::buttonClicked (Button* buttonThatWasClicked)
+{
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
+    if (buttonThatWasClicked == _loadButton)
+    {
+        //[UserButtonCode__loadButton] -- add your button handler code here..
+
+String loadstring = "";
+
+  File sfile = juce::File::getSpecialLocation(File::userHomeDirectory).getChildFile(".klangfalter");
+
+  if (!sfile.existsAsFile())
+  {
+  auto result = sfile.create();   
+  if(!result.wasOk() )
+  {
+  DBG( "create file error");
+  jassertfalse;
+  }
+  }
+  else
+  loadstring = sfile.loadFileAsString();
+
+        AudioFormatManager formatManager;
+        formatManager.registerBasicFormats();
+/*
+        FileChooser fileChooser("Choose a file to open...",
+                                _irAgent->getProcessor().getSettings().getImpulseResponseDirectory(),
+                                formatManager.getWildcardForAllFormats(),
+                                true);
+*/
+
+        FileChooser fileChooser("Choose a file to open...", File(loadstring), formatManager.getWildcardForAllFormats(), true);
+
+        if (fileChooser.browseForFileToOpen() && fileChooser.getResults().size() == 1)
+        {
+          const File file = fileChooser.getResults().getReference(0);
+
+  loadstring = file.getFullPathName();
+  loadstring = loadstring.upToLastOccurrenceOf("/", false, false);
+
+  if (sfile.existsAsFile())
+  sfile.replaceWithText(loadstring);
+
           _irAgent->setFile(file, 0);
           repaint();
         }
