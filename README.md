@@ -1,5 +1,40 @@
 KlangFalter
 ===========
+There are basically 2 config options.
+
+1: Copy the contents of the JUCE6 modules folder to the plugin/JuceLibraryCode/modules folder (for making the default Vst3 version)
+
+or
+
+2: Reconfigure using Projucer.
+
+Some files may then need to be edited
+ 
+For Vst3, edit plugin/JuceLibraryCode/AppConfig.h 
+ 
+and check that the below is entered
+ 
+```
+#ifndef    JUCE_VST3_CAN_REPLACE_VST2
+#define JUCE_VST3_CAN_REPLACE_VST2 0
+#endif 
+
+```
+
+To make with no Webkit, see the Webkit folder for manual config or choose the juce_gui_extra module in the Projucer and set 
+ JUCE_WEB_BROWSER to Disabled.
+ 
+Some libraries need to be installed
+
+sudo apt-get -y install webkit2gtk-4.0 git pkg-config libfreetype6-dev libx11-dev libxinerama-dev libxrandr-dev libxcursor-dev mesa-common-dev libasound2-dev freeglut3-dev libxcomposite-dev libcurl4-gnutls-dev
+
+To make the default Vst3 version, cd into the ~/JUCE6/unzipped KlangFalter master folder/plugin/Builds/Linux folder
+
+make CONFIG=Release
+
+vst3 is installed into ~/.vst3
+
+------------
 
 KlangFalter is a convolution audio plugin, e.g. for usage as convolution reverb.
 
