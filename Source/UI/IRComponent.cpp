@@ -126,7 +126,6 @@ void IRComponent::resized()
     //[/UserResized]
 }
 
-/*
 void IRComponent::buttonClicked (Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
@@ -163,8 +162,8 @@ void IRComponent::buttonClicked (Button* buttonThatWasClicked)
     //[UserbuttonClicked_Post]
     //[/UserbuttonClicked_Post]
 }
-*/
 
+/*
 void IRComponent::buttonClicked (Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
@@ -192,12 +191,11 @@ String loadstring = "";
 
         AudioFormatManager formatManager;
         formatManager.registerBasicFormats();
-/*
-        FileChooser fileChooser("Choose a file to open...",
-                                _irAgent->getProcessor().getSettings().getImpulseResponseDirectory(),
-                                formatManager.getWildcardForAllFormats(),
-                                true);
-*/
+
+//        FileChooser fileChooser("Choose a file to open...",
+//                                _irAgent->getProcessor().getSettings().getImpulseResponseDirectory(),
+//                                formatManager.getWildcardForAllFormats(),
+//                                true);
 
         FileChooser fileChooser("Choose a file to open...", File(loadstring), formatManager.getWildcardForAllFormats(), true);
 
@@ -230,6 +228,7 @@ String loadstring = "";
     //[UserbuttonClicked_Post]
     //[/UserbuttonClicked_Post]
 }
+*/
 
 void IRComponent::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
 {
