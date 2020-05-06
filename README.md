@@ -1,6 +1,8 @@
 KlangFalter
 ===========
 
+Binaries are at https://github.com/osxmidi/KlangFalter/releases
+
 To Make.
 
 There are basically 2 config options.
