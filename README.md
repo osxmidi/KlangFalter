@@ -32,6 +32,8 @@ To make with no Webkit, see the Webkit folder for manual config or choose the ju
  JUCE_WEB_BROWSER to Disabled.
  
 --------
+
+Rename the unzipped JUCE folder to JUCE and move it to the home folder
  
 Some libraries need to be installed
 
