@@ -53,7 +53,7 @@ The lv2 version needs JUCE lv2 from the lv2 branch at https://github.com/lv2-por
 
 sudo apt-get install lv2-dev
 
-Copy the contents of the JUCE modules folder to the plugin/JuceLibraryCode/modules folder
+Copy/replace the contents of the JUCE modules folder to the JuceLibraryCode/modules folder
 
 Unzip the Builds/Linux/lv2/KlangFalter-lv2-make.zip file in the Builds/Linux folder and copy the Makefile to the Builds/Linux folder
 
