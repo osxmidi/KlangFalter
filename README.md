@@ -11,6 +11,8 @@ There are basically 2 config options.
 
 or
 
+-------
+
 2: Reconfigure using Projucer.
 
 Some files may then need to be edited
@@ -28,6 +30,8 @@ and check that the below is entered
 
 To make with no Webkit, see the Webkit folder for manual config or choose the juce_gui_extra module in the Projucer and set 
  JUCE_WEB_BROWSER to Disabled.
+ 
+--------
  
 Some libraries need to be installed
 
