@@ -45,6 +45,26 @@ For Bitwig, the Vst3 needs Bitwig 3.2 or later.
 
 ------------
 
+The lv2 version needs JUCE lv2 from the lv2 branch at https://github.com/lv2-porting-project/JUCE
+
+sudo apt-get install lv2-dev
+
+Copy the contents of the JUCE modules folder to the plugin/JuceLibraryCode/modules folder
+
+Unzip the Builds/Linux/lv2/KlangFalter-lv2-make.zip file in the Builds/Linux folder and copy the Makefile to the Builds/Linux folder
+
+cd into the Builds/Linux folder
+
+make CONFIG=Release
+
+cd build
+
+copy lv2_ttl_generator and lvmake and makelv2 (might need a chmod +x to make them executable) from the unzipped Builds/Linux/lv2/KlangFalter-lv2-make.zip file to the build folder
+
+./makelv2
+
+------------
+
 KlangFalter is a convolution audio plugin, e.g. for usage as convolution reverb.
 
 I started its development a couple of time ago because I couldn't find a convolution reverb plugin which suited my needs - and because I was curious about audio DSP programming. ;-)
