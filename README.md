@@ -34,6 +34,8 @@ To make with no Webkit, see the Webkit folder for manual config or choose the ju
 --------
 
 Rename the unzipped JUCE folder to JUCE and move it to the home folder
+
+Unzip this repository/clone inside the JUCE folder
  
 Some libraries need to be installed
 
