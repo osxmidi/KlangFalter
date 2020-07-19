@@ -3,39 +3,15 @@ KlangFalter
 
 Binaries are at https://github.com/osxmidi/KlangFalter/releases
 
-To Make.
-
-There are basically 2 config options.
-
-1: Copy the contents of the JUCE6 modules folder to the plugin/JuceLibraryCode/modules folder (for making the default Vst3 version)
-
-or
-
--------
-
-2: Reconfigure using Projucer.
-
-Some files may then need to be edited
- 
-For Vst3, edit plugin/JuceLibraryCode/AppConfig.h 
- 
-and check that the below is entered
- 
-```
-#ifndef    JUCE_VST3_CAN_REPLACE_VST2
-#define JUCE_VST3_CAN_REPLACE_VST2 0
-#endif 
-
-```
-
-To make with no Webkit, see the Webkit folder for manual config or choose the juce_gui_extra module in the Projucer and set 
- JUCE_WEB_BROWSER to Disabled.
- 
---------
+Linux Make
 
 Rename the unzipped JUCE folder to JUCE and move it to the home folder
 
 Unzip this repository/clone inside the JUCE folder
+
+To make the Projucer change into ~/JUCE/extras/Projucer/Builds/LinuxMakefile then make CONFIG=Release
+
+Run the Projucer and load the jucer file in the unzipped folder and save the project
  
 Some libraries need to be installed
 
